@@ -58,7 +58,7 @@ public class ProductController {
     @GetMapping("/{id}")
     public ResponseEntity<ProductDto> fetchProductById(
             @Parameter(description = "ID of the product to be fetched", example = "1")
-            @PathVariable @Min(value = 1, message = "Product ID must be a positive number") Long id) {
+            @PathVariable  Long id) {
         log.info("Fetching product with ID: {}", id);
         return ResponseEntity.ok(productService.fetchProductById(id));
     }

@@ -11,6 +11,7 @@ import lombok.Data;
 @Schema(description = "Data transfer object representing a product")
 public class ProductDto {
 
+    private Long id;
     @NotBlank(message = "Name is mandatory")
     @Schema(description = "Name of the product", example = "Laptop")
     private String name;
