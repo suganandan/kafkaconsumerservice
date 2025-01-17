@@ -15,8 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
@@ -26,10 +25,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/products")
 @RequiredArgsConstructor
+@Slf4j
 @Tag(name = "Products", description = "APIs for managing products in the inventory")
 public class ProductController {
 
-    private static final Logger log = LoggerFactory.getLogger(ProductController.class);
     private final ProductService productService;
 
     @Operation(summary = "Create a new product", description = "API to create a new product in the database.")
