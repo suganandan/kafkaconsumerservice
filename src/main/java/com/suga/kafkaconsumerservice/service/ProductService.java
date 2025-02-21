@@ -6,6 +6,7 @@ import com.suga.kafkaconsumerservice.entity.Product;
 import com.suga.kafkaconsumerservice.exception.ResourceNotFoundException;
 import com.suga.kafkaconsumerservice.mapper.ProductMapper;
 import com.suga.kafkaconsumerservice.repo.ProductRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,10 +16,11 @@ import java.util.Optional;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class ProductService {
 
-    @Autowired
-    private ProductRepository productRepository;
+
+    private final ProductRepository productRepository;
 
     public ProductDto createProduct(ProductDto productDto) {
         try {
